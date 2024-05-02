@@ -1,13 +1,14 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { BaseURL } from "@/constants/constants";
+import { BaseURL, ProjectName } from "@/constants/constants";
 import { Toaster } from "react-hot-toast";
 import QueryProvider from "@/providers/QueryProvider";
+import Navbar from "@/components/nav/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: `Home - ${BaseURL}`,
+  title: `Home - ${ProjectName}`,
   description:
     "Welcome to programming hero assessment. You are going to enjoy this project.",
   keywords: ["community", "p-hero"],
@@ -24,8 +25,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <QueryProvider>
-      <html lang="en" className="pt-[10px]">
+      <html lang="en">
         <body className={inter.className}>
+          <Navbar/>
           {children}
           <Toaster />
         </body>

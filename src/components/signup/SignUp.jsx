@@ -2,10 +2,11 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
 import Link from 'next/link';
+import toast from 'react-hot-toast';
 
 const SignUp = () => {
   const onFinish = (values) => {
-    console.log('Received values of form: ', values);
+    toast.error("Signup is not currently working. It will be available soon...")
   };
 
   return (
@@ -96,7 +97,7 @@ const SignUp = () => {
       </Form.Item>
 
       <Form.Item
-      wrapperCol={{ offset: 8, span: 16 }}
+        wrapperCol={{ offset: 8, span: 16 }}
       >
         <Button type="primary" htmlType="submit">
           Sign Up
